@@ -12,13 +12,12 @@ public class Arm extends SubsystemBase {
   //FIELDS
   private static Arm instanceArm; 
   //add field for the XRPServo motor
-
+  private XRPServo arm;
 
   /** Creates a new Arm. */
   public Arm() {
     //Construct the XRPServo
-
-
+    arm = new XRPServo(1);
   }
 
   //Arm singleton
@@ -31,13 +30,13 @@ public class Arm extends SubsystemBase {
 
   //Reset arm
   public void resetArm(){
-
-    
+    arm.setAngle(0);
   }
 
   //Method to move the arm
-
-
+  public void moveArm(double angle){
+    arm.setAngle(angle);
+  }
 
 
   @Override
